@@ -1,11 +1,42 @@
 const initialState = {
   loader: 0,
   locale: 'es',
-  site: window.env && window.env.site ? window.env.site : { id: 1, locales: [] },
-  home: { content: { slides: [], content: '' } },
-  pages: [],
-  posts: [],
-  current: window.env && window.env.resource ? window.env.resource : { content: {} },
+  site: {
+    id: 1,
+    user_id: 1,
+    template_id: 1,
+    slug: 'localhost:8000',
+    locale: 'es',
+    locales: ['es'],
+    title: 'Karen Watsica',
+    description: 'Doloribus delectus commodi dolorum quod possimus vitae. Nihil quia velit et praesentium.',
+    google_analitycs_id: 'UA-XXXXX',
+    favicon_url: 'https://lorempixel.com/16/16/?10572',
+    logo_url: 'https://lorempixel.com/150/150/?52150',
+    created_at: '2018-05-09 04:13:39',
+    updated_at: '2018-05-09 04:13:39',
+  },
+  home: {
+    id: 1,
+    title: '',
+    slug: '',
+    content: {
+      //
+    }
+  },
+  events: [
+    {
+      id: 1,
+      title: '',
+      slug: '',
+      content: {
+        main_media: '',
+        date: ''
+      },
+      resources: []
+    }
+  ],
+  selectedEvent: null,
 }
 
 export default function(state = initialState, action) {

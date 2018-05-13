@@ -35,6 +35,8 @@ module.exports = {
       appMountId: 'app',
       baseHref: '/',
       links: [
+        'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+        'https://fonts.googleapis.com/css?family=Cookie|Roboto',
         'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
       ]
     }),

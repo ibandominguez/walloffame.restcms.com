@@ -1,3 +1,3 @@
-export { default as Slider } from './Slider'
-export { default as LinkRenderer } from './LinkRenderer'
-export { default as MessageCard } from './MessageCard'
+export { default as Header } from './Header'
+export { default as CTA } from './CTA'
+export { default as Crono } from './Crono'
