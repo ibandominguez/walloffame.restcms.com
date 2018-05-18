@@ -11,8 +11,8 @@ class Home extends Component {
       <div>
         <Header fixedTop={true} />
         <CTA />
-        <Header />
         <Crono />
+        <Header />
       </div>
     )
   }
