@@ -1,43 +1,35 @@
 import 'whatwg-fetch'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-import { Provider } from 'react-redux'
-import { Home } from './containers'
-import rootReducer from './reducers'
-import * as actions from './actions'
-import * as services from './services'
-
-const store = createStore(rootReducer, applyMiddleware(thunk))
+import { Header, CTA, Crono } from './components'
 
 class App extends Component {
   constructor(props) {
     super(props)
+    this.state = {}
     this.setUpLoader()
-    this.bootDispatchers()
   }
 
   setUpLoader() {
+    let app = this
     let origOpen = XMLHttpRequest.prototype.open
     XMLHttpRequest.prototype.open = function() {
-      store.dispatch(actions.increaseLoader())
+      this.setState({ loader: this.state.loader++ })
       this.addEventListener('load', () => {
-        store.dispatch(actions.decreaseLoader())
+        this.setState({ loader: this.state.loader-- })
       })
       origOpen.apply(this, arguments)
     }
   }
 
-  bootDispatchers() {
-    //
-  }
-
   render() {
     return (
-      <Provider store={store}>
-        <Home />
-      </Provider>
+      <section>
+        <Header fixedTop={true} />
+        <CTA />
+        <Crono />
+        <Header />
+      </section>
     )
   }
 }
