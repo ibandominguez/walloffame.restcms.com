@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Radium from 'radium'
 import { Container, Row, Col, Button } from 'reactstrap'
-import { Timeline } from './'
+import { Timeline, ImageCard } from './'
 
 const styles = {
   container: {
@@ -39,6 +39,13 @@ class Crono extends Component {
               <Timeline />
             </Col>
           </Row>
+        </Container>
+        <div className={'clearfix py-5'}>
+          {new Array(1).fill(null).map((item, index) => (
+            <ImageCard key={index} />
+          ))}
+        </div>
+        <Container>
           <Row>
             <Col>
               <Row className={'px-5 pt-5'} style={{ backgroundColor: '#222', borderRadius: 3, marginBottom: 2 }}>
