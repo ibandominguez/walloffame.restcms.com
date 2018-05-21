@@ -1,7 +1,7 @@
 import 'whatwg-fetch'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { Header, CTA, Crono } from './components'
+import { Header, Footer, CTA, Crono } from './components'
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class App extends Component {
         <Header fixedTop={true} />
         <CTA />
         <Crono />
-        <Header />
+        <Footer />
       </section>
     )
   }

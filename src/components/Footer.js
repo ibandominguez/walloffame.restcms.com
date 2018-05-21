@@ -5,13 +5,7 @@ import { Container, Row, Col } from 'reactstrap'
 const styles = {
   container: {
     backgroundColor: '#222',
-    color: '#fff',
-    boxShadow: '0px 18px 70px 0px rgba(0,0,0,0.75)',
-    position: 'fixed',
-    width: '100%',
-    top: 0,
-    left: 0,
-    zIndex: 999999999
+    color: '#fff'
   },
   middleWrapper: {
     display: 'flex',

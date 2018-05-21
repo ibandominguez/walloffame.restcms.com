@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Radium from 'radium'
 import { Container, Row, Col, Button } from 'reactstrap'
+import InfiniteScroll from 'react-bidirectional-infinite-scroll'
 import { Timeline, ImageCard } from './'
 
 const styles = {
@@ -40,11 +41,19 @@ class Crono extends Component {
             </Col>
           </Row>
         </Container>
+
         <div className={'clearfix py-5'}>
-          {new Array(1).fill(null).map((item, index) => (
-            <ImageCard key={index} />
+          {new Array(3).fill(null).map((item, index) => (
+            <ImageCard
+              key={index}
+              open={index == 1}
+              height={325}
+              width={275}
+              style={{ float: 'left' }}
+            />
           ))}
         </div>
+
         <Container>
           <Row>
             <Col>
@@ -98,6 +107,7 @@ class Crono extends Component {
             </Col>
           </Row>
         </Container>
+
         <div style={{
           backgroundColor: '#02A5FD',
           height: 300,
