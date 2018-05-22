@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Radium from 'radium'
 import { Container, Row, Col, Button } from 'reactstrap'
 import InfiniteScroll from 'react-bidirectional-infinite-scroll'
-import { Timeline, ImageCard } from './'
+import { Timeline, ImageCard, HorizontalScroll } from './'
 
 const styles = {
   container: {
@@ -42,17 +42,21 @@ class Crono extends Component {
           </Row>
         </Container>
 
-        <div className={'clearfix py-5'}>
-          {new Array(3).fill(null).map((item, index) => (
+        <HorizontalScroll>
+          {new Array(30).fill(null).map((item, index) => (
             <ImageCard
               key={index}
               open={index == 1}
               height={325}
               width={275}
-              style={{ float: 'left' }}
+              style={{
+                margin: 5,
+                display: 'inline-block',
+                backgroundSize: 'cover'
+              }}
             />
           ))}
-        </div>
+        </HorizontalScroll>
 
         <Container>
           <Row>

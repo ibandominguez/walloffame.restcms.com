@@ -4,15 +4,15 @@ const styles = {
   container: {
     position: 'relative',
     backgroundPosition: 'cover',
-    marginRight: 25
+    marginRight: 25,
+    marginBottom: 100
   },
   block: {
-    position: 'absolute',
-    top: '70%',
-    width: '100%',
     backgroundColor: '#222',
     color: '#fff',
-    left: 0
+    position: 'absolute',
+    top: '100%',
+    marginTop: '-25%'
   }
 }
 
@@ -23,15 +23,18 @@ export default class ImageCard extends Component {
       width: this.props.width || 300,
       height: this.props.height || 400,
       backgroundImage: `url(${this.props.image || 'https://fakeimg.pl/300x300/'})`,
-      backgroundPosition: 'cover',
       ...this.props.style
     }
+  }
+
+  isOpen() {
+    return !!this.props.open
   }
 
   render() {
     return (
       <div style={this.getContainerStyles()}>
-        {this.props.open && <div className={'p-3'} style={styles.block}>
+        {this.isOpen() && <div className={'p-3'} style={styles.block}>
           <h5>Title HelloWorld</h5>
           <p style={{ color: '#aaa' }}>Lorem ipsum tripsum helloworld</p>
           <div className={'clearfix'}>
