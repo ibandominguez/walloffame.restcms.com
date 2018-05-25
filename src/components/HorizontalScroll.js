@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Radium from 'radium'
 
 const styles = {
-  padding: '4px',
+  padding: '20px 0 80px 0',
   overflowX: 'scroll',
   whiteSpace: 'nowrap'
 }

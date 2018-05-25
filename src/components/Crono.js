@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Radium from 'radium'
 import { Container, Row, Col, Button } from 'reactstrap'
-import InfiniteScroll from 'react-bidirectional-infinite-scroll'
 import { Timeline, ImageCard, HorizontalScroll } from './'
 
 const styles = {
@@ -43,9 +42,10 @@ class Crono extends Component {
         </Container>
 
         <HorizontalScroll>
-          {new Array(30).fill(null).map((item, index) => (
+          {this.props.events.map((event, index) => (
             <ImageCard
               key={index}
+              {...event}
               open={index == 1}
               height={325}
               width={275}

@@ -51,7 +51,7 @@ class Header extends Component {
               <img src={'https://www.alejandrosanz.com/images/alejandro-sanz.svg'} className={'img-fluid'} />
             </Col>
             <Col style={styles.middleWrapper}>
-              <img src={'https://www.alejandrosanz.com/images/alejandro-sanz.svg'} className={'img-fluid'} />
+              <img src={require('../images/event-logo.png')} className={'img-fluid'} />
             </Col>
             <Col style={styles.iconsWrapper}>
               <a href={``} target={'_blank'}>

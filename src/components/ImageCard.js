@@ -2,17 +2,20 @@ import React, { Component } from 'react'
 
 const styles = {
   container: {
+    margin: 10,
     position: 'relative',
-    backgroundPosition: 'cover',
-    marginRight: 25,
-    marginBottom: 100
+  },
+  header: {
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
   },
   block: {
+    position: 'absolute',
     backgroundColor: '#222',
     color: '#fff',
-    position: 'absolute',
-    top: '100%',
-    marginTop: '-25%'
+    bottom: -30,
+    left: 0,
+    width: '100%'
   }
 }
 
@@ -27,6 +30,15 @@ export default class ImageCard extends Component {
     }
   }
 
+  getHeaderStyles() {
+    return {
+      ...styles.header,
+      width: this.props.width || 300,
+      height: this.props.height || 400,
+      backgroundImage: `url(${this.props.media || 'https://fakeimg.pl/300x300/'})`
+    }
+  }
+
   isOpen() {
     return !!this.props.open
   }
@@ -34,9 +46,10 @@ export default class ImageCard extends Component {
   render() {
     return (
       <div style={this.getContainerStyles()}>
+        <div style={this.getHeaderStyles()} />
         {this.isOpen() && <div className={'p-3'} style={styles.block}>
-          <h5>Title HelloWorld</h5>
-          <p style={{ color: '#aaa' }}>Lorem ipsum tripsum helloworld</p>
+          <h5>{this.props.title}</h5>
+          <p style={{ color: '#aaa' }}>{this.props.description}</p>
           <div className={'clearfix'}>
             <i className={`fa fa-share`} style={{ marginRight: 5, backgroundColor: '#000', padding: 8, borderRadius: '50%' }} />
             <i className={`fa fa-share`} style={{ marginRight: 5, backgroundColor: '#000', padding: 8, borderRadius: '50%' }} />
