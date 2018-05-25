@@ -5,6 +5,14 @@ const styles = {
     margin: 10,
     position: 'relative',
   },
+  dateBadge: {
+    position: 'absolute',
+    top: 15,
+    left: 15,
+    backgroundColor: '#222',
+    padding: '10px 20px',
+    borderRadius: 35
+  },
   header: {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
@@ -46,6 +54,7 @@ export default class ImageCard extends Component {
   render() {
     return (
       <div style={this.getContainerStyles()}>
+        <div style={styles.dateBadge}>{this.props.date.format('DD MMMM')}</div>
         <div style={this.getHeaderStyles()} />
         {this.isOpen() && <div className={'p-3'} style={styles.block}>
           <h5>{this.props.title}</h5>
