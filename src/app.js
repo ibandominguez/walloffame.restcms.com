@@ -20,12 +20,15 @@ class App extends Component {
   }
 
   createEvents() {
-    return new Array(30).fill(null).map((item, index) => ({
-      date: moment().add((Math.floor(Math.random() * 5) + 1) * index, 'days'),
-      title: `Event: ${index + 1}`,
-      description: `Description: ${index + 1}`,
-      media: `https://fakeimg.pl/400x400/?text=${index + 1}`
-    }))
+    return new Array(30).fill(null).map((item, index) => {
+      const date = moment().add((Math.floor(Math.random() * 5) + 1) * index, 'days')
+      return {
+        date,
+        title: `Event: ${index + 1}`,
+        description: `Description: ${index + 1}`,
+        media: `https://fakeimg.pl/400x400/?text=${date.format('DD%20MMMM')}`
+      }
+    })
   }
 
   setUpLoader() {

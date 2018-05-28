@@ -10,7 +10,7 @@ const styles = {
 class HorizontalScroll extends Component {
   render() {
     return (
-      <div style={styles}>{this.props.children}</div>
+      <div style={{ ...styles, ...this.props.style }}>{this.props.children}</div>
     )
   }
 }

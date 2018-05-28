@@ -34,11 +34,11 @@ class Crono extends Component {
               <input style={styles.input} type={'search'} className={'float-right'} placeholder={'Buscar acontecimiento'} />
             </Col>
           </Row>
-          <Row>
+          {false && <Row>
             <Col>
-              <Timeline />
+              <Timeline {...this.props} />
             </Col>
-          </Row>
+          </Row>}
         </Container>
 
         <HorizontalScroll>
